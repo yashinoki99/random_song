@@ -12,7 +12,7 @@ fi
 
 rm "$0"
 
-packages=("ffmpeg" "toilet")
+packages=("ffmpeg" "toilet" "figlet")
 
 package_installed() {
 
@@ -273,6 +273,11 @@ chmod +x /usr/local/bin/random_song
 username=$(whoami)
 chown "$username" /usr/local/bin/random_song
 clear
+
+wget "http://www.figlet.org/fonts/chunky.flf" && mv chunky.flf /usr/share/figlet
+wget "http://www.figlet.org/fonts/digital.flf" && mv digital.flf /usr/share/figlet
+wget "http://www.figlet.org/fonts/mini.flf" && mv mini.flf /usr/share/figlet
+wget "http://www.figlet.org/fonts/small.flf" && mv small.flf /usr/share/figlet
 
 # Displayus some info about the script before exiting
 if command -v zenity &> /dev/null; then
