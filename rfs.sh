@@ -151,11 +151,13 @@ fi
     
 toilet -f digital --gay "$genre"
 
-     echo -e "                               ${BLACK}\e]8;;file://$directory\aOpen Directory\e]8;;\a${reset_color}"   
-    if [ "$FLAC_ONLY" == false ] && [ "$MP3_ONLY" == false ]; then
-    echo -e "                          
-                                   ${RED}${bold} $format${reset_color}"
+
+  if [ "$FLAC_ONLY" == false ] && [ "$MP3_ONLY" == false ] && [ "$M4A_ONLY" == false ]; then
+                            
+         shit=$format
     fi
+     echo -e "                            ${BLACK}\e]8;;file://$directory\aOpen Directory\e]8;;\a${reset_color} ${RED}${bold} $shit${reset_color}"   
+  
 
 
 
@@ -262,6 +264,7 @@ while true; do
     fi
     
 done
+
 
 
 EOF
