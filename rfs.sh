@@ -161,7 +161,7 @@ while [[ "$#" -gt 0 ]]; do   # While loop which checks for parameters
             ;;
         -h)clear
 echo -e "    
-     ${bold}Simple script that plays songs randomly using mplayer on the backend.
+     ${bold}Simple script that plays songs randomly using ffplay on the backend.
       ${bold} Type ${YELLOW}random_song${NOCOLOR}${bold} in any terminal and the script will recursively 
          search through all directories and pick a random song to play.
          
