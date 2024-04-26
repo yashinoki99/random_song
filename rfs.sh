@@ -188,8 +188,8 @@ while true; do
        sleep 1
     else
         if [ -n "$random_file" ]; then
-            print_metadata "$random_flac"
-            ffplay -nodisp -autoexit "$random_flac" > /dev/null 2>&1
+            print_metadata "$random_file"
+            ffplay -nodisp -autoexit "$random_file" > /dev/null 2>&1
             clear
         else
             clear
