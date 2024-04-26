@@ -14,17 +14,28 @@ rm "$0"
 
 packages=("ffmpeg" "toilet")
 
+if [ -f /etc/debian_version ]; then
+pm="dpkg"
+S="-s"
+pmm="apt"
+elif [ -f /etc/fedora-release ]; then
+pm="rpm"
+S="-q"
+pmm="dnf"
+else
+echo "Install script only works in Debian and Fedora"
+exit
+fi
 package_installed() {
 
-    dpkg -s "$1" &> /dev/null
+    $pm $S "$1" &> /dev/null
 }
 
 for pkg in "${packages[@]}"; do
     if ! package_installed "$pkg"; then
-        apt install "$pkg" -y
+        "$pmm" install "$pkg" -y
     fi 
 done
-
 
 embedded_script=$(cat << 'EOF'
 #!/bin/bash
